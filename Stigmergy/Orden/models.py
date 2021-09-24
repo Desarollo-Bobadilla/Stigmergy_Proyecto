@@ -23,8 +23,10 @@ class Orden (models.Model):
     comprador = models.ForeignKey(Comprador, on_delete=models.CASCADE, default=None)
     items = models.ManyToManyField(Item)
 
-    #hubEntrega
-    #hubRecepción =
+    # TODO Atributos de simbolismo a las relaciones de los Hubs
+
+    hubEntrega = models.IntegerField(null=True)
+    hubRecepcion = models.IntegerField(null=True)
 
     # TODO String representation of any object
 

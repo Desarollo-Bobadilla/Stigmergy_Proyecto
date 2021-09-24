@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 
 # TODO Añadir links de apps y visual
 
@@ -22,5 +23,12 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index)
+
+    # TODO Vista de la página principal
+
+    path('', views.index),
+
+    # TODO Vista de las aplicaciones
+
+    path('ordenes/', include('Orden.urls'))
 ]

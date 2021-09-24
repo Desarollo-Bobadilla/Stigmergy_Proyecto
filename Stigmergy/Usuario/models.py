@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # TODO Modelo del proyecto (Padre)
 
 class Usuario (models.Model):
@@ -17,6 +18,9 @@ class Usuario (models.Model):
 
     class Meta:
         abstract = True
+
+
+
 
 # TODO Modelo del proyecto (Hijo)
 
