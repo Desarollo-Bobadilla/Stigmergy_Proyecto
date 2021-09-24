@@ -38,7 +38,7 @@ def delete_orden(request, pk):
 
 def change_orden(request, pk):
 
-    if request.method == 'GET': # REVISAR, DEBERÍA SER put
+    if request.method == 'PUT': # REVISAR, DEBERÍA SER put
 
         change_value_orden_pk(pk)
 
@@ -55,13 +55,21 @@ def orden_create(request):
 
         form = OrdenForm(request.POST)
 
+        #print('\n', form.data, '\n')
+
         if form.is_valid():
 
             create_orden(form)
             messages.add_message(request, messages.SUCCESS, 'Orden create successful')
-            return HttpResponseRedirect(reverse('orden_create'))
+            return HttpResponseRedirect(reverse('Orden_Create'))
             
         else:
-            print(form.errors)
+            print('\n', form.errors, '\n')
     else:
         form = OrdenForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'Orden/ordenCreate.html', context)
