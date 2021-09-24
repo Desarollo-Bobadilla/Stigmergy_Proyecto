@@ -6,7 +6,7 @@ from ..models import Orden
 # TODO Metodos Recuperar Todos
 
 def get_ordenes():
-    return Orden.objects.all()
+    return Orden.objects.all().order_by('pk')[:10]
 
 # TODO Crear
 

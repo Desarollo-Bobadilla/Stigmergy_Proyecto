@@ -18,8 +18,11 @@ from django.urls import reverse
 def get_all_ordenes(request):
 
     if request.method == 'GET':
-        ordenes_list = serializers.serialize('json', get_ordenes())
-        return HttpResponse(ordenes_list, content_type = 'application/json')
+
+        context = {
+            'ordenes_list': get_ordenes()
+        }
+        return render(request, 'Orden/ordenes.html', context)
 
 
 def get_orden(request, pk):
