@@ -58,8 +58,8 @@ def orden_create(request):
         if form.is_valid():
 
             create_orden(form)
-            messages.add_message(request, messages.SUCCESS, 'Measurement create successful')
-            return HttpResponseRedirect(reverse('measurementCreate'))
+            messages.add_message(request, messages.SUCCESS, 'Orden create successful')
+            return HttpResponseRedirect(reverse('orden_create'))
             
         else:
             print(form.errors)
