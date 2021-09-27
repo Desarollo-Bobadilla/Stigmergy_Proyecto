@@ -18,6 +18,30 @@ class Orden (models.Model):
     identificate = models.IntegerField()
     precioTotal = models.FloatField(null=True, blank=True, default=None)
 
+    CREADA = 'Creada'
+    ALISTAMIENTO = 'Alistamiento'
+    LISTA = 'Lista'
+    EN_HUB_DESPACHO = 'En Hub Despacho'
+    VOLANDO = 'Volando'
+    EN_HUB_LLEGADA = 'En Hub Llegada'
+    LISTA_RECOGER = 'Lista Recoger'
+    ENTREGADA = 'Entregada'
+    CANCELADA = 'Cancelada'
+
+    CHOICES = (
+        (CREADA, 'Creada'),
+        (ALISTAMIENTO, 'Alistamiento'),
+        (LISTA, 'Lista'),
+        (EN_HUB_DESPACHO, 'En Hub Despacho'),
+        (VOLANDO, 'Volando'),
+        (EN_HUB_LLEGADA, 'En Hub Llegada'),
+        (LISTA_RECOGER, 'Lista Recoger'),
+        (ENTREGADA, 'Entregada'),
+        (CANCELADA, 'Cancelada')
+    )
+
+    status = models.CharField(max_length=255, choices=CHOICES, default=CREADA)
+
     # TODO Relaciones
     
     comprador = models.ForeignKey(Comprador, on_delete=models.CASCADE, default=None)

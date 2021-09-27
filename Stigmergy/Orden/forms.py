@@ -15,7 +15,8 @@ class OrdenForm(forms.ModelForm):
             'comprador',
             'items',
             'hubEntrega',
-            'hubRecepcion'
+            'hubRecepcion',
+            'status'
         ]
 
         labels = {
@@ -24,5 +25,6 @@ class OrdenForm(forms.ModelForm):
             'comprador' : 'Comprador',
             'items' : 'Items',
             'hubEntrega' : 'HubEntrega',
-            'hubRecepcion' : 'HubRecepcion'
+            'hubRecepcion' : 'HubRecepcion',
+            'status' : 'Status'
         }

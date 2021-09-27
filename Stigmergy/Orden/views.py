@@ -33,7 +33,7 @@ def get_orden(request, pk):
 
 def delete_orden(request, pk):
 
-    if request.method == 'GET': # REVISAR, DEBERÍA SER DELETE
+    if request.method in ['GET', 'DELETE']:
         delete_orden_pk(pk)
 
         ordenes_list = serializers.serialize('json', get_ordenes())
@@ -41,7 +41,7 @@ def delete_orden(request, pk):
 
 def change_orden(request, pk):
 
-    if request.method == 'PUT': # REVISAR, DEBERÍA SER put
+    if request.method in ['PUT', 'GET']: # REVISAR, DEBERÍA SER put
 
         change_value_orden_pk(pk)
 

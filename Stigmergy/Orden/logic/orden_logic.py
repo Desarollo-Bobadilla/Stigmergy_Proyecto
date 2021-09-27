@@ -29,5 +29,5 @@ def delete_orden_pk(n):
 
 def change_value_orden_pk(n):
     orden = Orden.objects.get(pk = n)
-    orden.precioTotal = 1000
+    orden.status = 'Alistamiento'
     orden.save()
