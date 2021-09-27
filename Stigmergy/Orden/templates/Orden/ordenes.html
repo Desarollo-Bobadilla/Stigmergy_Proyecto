@@ -4,6 +4,7 @@
 <div class="content">
     <div class="">
         <div class="page-header-title">
+            <br>
             <h4 class="page-title">Últimas Ordenes</h4>
         </div>
     </div>
@@ -24,6 +25,7 @@
                             <th>Precio Total</th>
                             <th>Hub Entrega</th>
                             <th>Rub Recepcion</th>
+                            <th>Estado</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,6 +37,7 @@
                             <td>{{ orden.precioTotal }}</td>
                             <td>{{ orden.hubEntrega }}</td>
                             <td>{{ orden.hubRecepcion }}</td>
+                            <td>{{ orden.status }}</td>
                         </tr>
                         {% endfor %}
 
