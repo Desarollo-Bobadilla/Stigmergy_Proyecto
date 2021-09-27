@@ -45,8 +45,11 @@ def change_orden(request, pk):
 
         change_value_orden_pk(pk)
 
-        orden = serializers.serialize('json', [get_orden_pk(pk)])
-        return HttpResponse(orden, content_type = 'application/json')
+        context = {
+            'ordenes_list': get_ordenes()
+        }
+
+        return render(request, 'Orden/ordenChange.html', context)
 
 # ----------------------------------------------------------------------------------
 

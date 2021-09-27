@@ -12,7 +12,7 @@ urlpatterns = [
     path('list/', views.get_all_ordenes, name='ordenes_list'),
     path('see/<int:pk>/', views.get_orden, name='get_orden_by_pk'),
     path('delete/<int:pk>/', views.delete_orden, name='delete_orden_by_pk'),
-    path('change/<int:pk>/', views.change_orden, name='change_ordent_by_pk'),
 
+    path('change/<int:pk>/', csrf_exempt(views.change_orden), name='change_ordent_by_pk'),
     path('orden_create/', csrf_exempt(views.orden_create), name='Orden_Create')
 ]
