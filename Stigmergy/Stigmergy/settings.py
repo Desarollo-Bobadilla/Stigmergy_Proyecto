@@ -88,7 +88,7 @@ DATABASES = {
 			"NAME": 'slayer',
 			"USER": 'demon',
 			"PASSWORD": 'hashira',
-			"HOST": "172.24.98.90",
+			"HOST": "172.24.98.140",
 			"PORT": "5432",
 		}
 }
