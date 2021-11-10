@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'Usuario',
     'Pedido',
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -81,13 +82,11 @@ WSGI_APPLICATION = 'Stigmergy.wsgi.application'
 DATABASES = {
 		"default": {
 			"ENGINE": "django.db.backends.postgresql_psycopg2",
-			"NAME": 'nesuko',
-			"USER": 'tanjiro',
+			"NAME": 'monitoringBD',
+			"USER": 'monitoringUser',
 			"PASSWORD": '123',
-			#"HOST": "172.24.98.140",
-			#"PORT": "5432",
-            "HOST": "localhost",
-        	"PORT": "",
+            "HOST": "monitoring-db.c8uzrj5iwkry.us-east-1.rds.amazonaws.com",
+        	"PORT": "5432",
 		}
 }
 
@@ -140,3 +139,24 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'static', 'media')
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
+
+
+LOGIN_URL = "/login/auth0"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "https://dev-oxato1dc.us.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:"
+
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-oxato1dc.us.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = 'yXPqipiRuewiXOb5CjYQSlLFzCBTuuT7'
+SOCIAL_AUTH_AUTH0_SECRET = 'QiHYzAMzU4ybepONR4PYxe6mOJhamb5a813ze0AvWXxFdD5VOo5OlDz-ImC_r9_e'
+
+SOCIAL_AUTH_AUTH0_SCOPE = [
+ 'openid',
+ 'profile',
+ 'email',
+ 'role',
+]
+AUTHENTICATION_BACKENDS = {
+ 'Stigmergy.auth0backend.Auth0',
+ 'django.contrib.auth.backends.ModelBackend',
+}

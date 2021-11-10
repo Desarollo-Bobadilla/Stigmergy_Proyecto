@@ -30,5 +30,10 @@ urlpatterns = [
 
     # TODO Vista de las aplicaciones
 
-    path('pedido/', include('Pedido.urls'))
+    path('pedido/', include('Pedido.urls')),
+
+    # TODO Vista de Auth0
+
+    path(r'', include('django.contrib.auth.urls')),
+    path(r'', include('social_django.urls'))
 ]

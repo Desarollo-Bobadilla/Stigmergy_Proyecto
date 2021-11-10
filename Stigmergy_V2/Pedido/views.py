@@ -11,11 +11,21 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+# TODO AUTH0
+
+from django.contrib.auth.decorators import login_required
+from Stigmergy.auth0backend import getRole
+
 # ----------------------------------------------------------------------------------
 
 # TODO Recuperar Todas
 
+@login_required
 def get_all_ordenes(request):
+
+    role = getRole(request)
+    if role != "Big Boss":
+        return HttpResponse("Unauthorized User")
 
     if request.method == 'GET':
 
@@ -24,14 +34,23 @@ def get_all_ordenes(request):
         }
         return render(request, 'Orden/ordenes.html', context)
 
-
+@login_required
 def get_orden(request, pk):
+
+    role = getRole(request)
+    if role != "Big Boss":
+        return HttpResponse("Unauthorized User")
 
     if request.method == 'GET':
         orden = serializers.serialize('json', [get_orden_pk(pk)])
         return HttpResponse(orden, content_type = 'application/json')
 
+@login_required
 def delete_orden(request, pk):
+
+    role = getRole(request)
+    if role != "Big Boss":
+        return HttpResponse("Unauthorized User")
 
     if request.method in ['GET', 'DELETE']:
         delete_orden_pk(pk)
@@ -39,7 +58,12 @@ def delete_orden(request, pk):
         ordenes_list = serializers.serialize('json', get_ordenes())
         return HttpResponse(ordenes_list, content_type = 'application/json')
 
+@login_required
 def change_orden(request, pk):
+
+    role = getRole(request)
+    if role != "Big Boss":
+        return HttpResponse("Unauthorized User")
 
     if request.method in ['PUT', 'GET']: # REVISAR, DEBERÍA SER put
 
@@ -55,7 +79,12 @@ def change_orden(request, pk):
 
 # TODO Crear
 
+@login_required
 def orden_create(request):
+
+    role = getRole(request)
+    if role != "Big Boss":
+        return HttpResponse("Unauthorized User")
 
     if request.method == 'POST':
 
