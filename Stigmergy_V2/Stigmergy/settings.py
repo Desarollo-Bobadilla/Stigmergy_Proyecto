@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Stigmergy.wsgi.application'
 DATABASES = {
 		"default": {
 			"ENGINE": "django.db.backends.postgresql_psycopg2",
-			"NAME": 'monitoringBD',
+			"NAME": 'monitoringDB',
 			"USER": 'monitoringUser',
 			"PASSWORD": 'isis2503',
             "HOST": "monitoring-db.c8uzrj5iwkry.us-east-1.rds.amazonaws.com",
