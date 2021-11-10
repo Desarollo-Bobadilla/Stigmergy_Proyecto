@@ -1,0 +1,19 @@
+
+--> Permisos, ordenes activas y tal solo puede
+	* El 0% que no tengan ese rol puedan acceder
+	* Definir el rol y funcionalidad especifico
+	* Manual ingresando
+	* Broken Access Control // Elevation of Privilege
+	* Confidencialidad
+
+--> Wireshark para hacer el test de encriptar
+	* HTTPS
+	* Javascript --> Encriptar
+	* Cuando llega a mi Back, guardarla encriptada
+
+--> Más de uno con Auth0
+
+--> Rendimiento o Disponibilidad, si uso o no Docker da igual
+	* Pero si uso Docker es más rapido el despliegue
+	* Es más facil la instalación/ no ofrece nada más
+	* Favorece en sistemas de clusters / cubernate

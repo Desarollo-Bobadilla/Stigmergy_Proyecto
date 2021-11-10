@@ -84,7 +84,7 @@ DATABASES = {
 			"ENGINE": "django.db.backends.postgresql_psycopg2",
 			"NAME": 'monitoringBD',
 			"USER": 'monitoringUser',
-			"PASSWORD": '123',
+			"PASSWORD": 'isis2503',
             "HOST": "monitoring-db.c8uzrj5iwkry.us-east-1.rds.amazonaws.com",
         	"PORT": "5432",
 		}
