@@ -143,7 +143,7 @@ STATICFILES_DIRS = (
 
 LOGIN_URL = "/login/auth0"
 LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "https://dev-oxato1dc.us.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:8082" # TODO CHANGE
+LOGOUT_REDIRECT_URL = "https://dev-oxato1dc.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F3.91.31.61:8082" # TODO CHANGE
 
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-oxato1dc.us.auth0.com'
