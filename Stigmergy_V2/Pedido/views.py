@@ -83,7 +83,7 @@ def change_orden(request, pk):
 def orden_create(request):
 
     role = getRole(request)
-    if role != "Big Boss" or role != "User":
+    if role != "Big Boss" or role != "Usuario Comprador":
         return HttpResponse("Unauthorized User")
 
     if request.method == 'POST':
